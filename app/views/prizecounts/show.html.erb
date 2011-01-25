@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Prize name:</b>
+  <%= @prizecount.prize_name %>
+</p>
+
+<p>
+  <b>Prize:</b>
+  <%= @prizecount.prize_id %>
+</p>
+
+<p>
+  <b>Prize count:</b>
+  <%= @prizecount.prize_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_prizecount_path(@prizecount) %> |
+<%= link_to 'Back', prizecounts_path %>

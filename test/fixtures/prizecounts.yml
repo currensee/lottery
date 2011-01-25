@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  prize_name: MyString
+  prize_id: 1
+  prize_count: 1
+
+two:
+  prize_name: MyString
+  prize_id: 1
+  prize_count: 1

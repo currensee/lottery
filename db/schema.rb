@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125185829) do
+ActiveRecord::Schema.define(:version => 20110125193418) do
 
   create_table "days", :force => true do |t|
     t.integer  "number"
@@ -26,6 +26,21 @@ ActiveRecord::Schema.define(:version => 20110125185829) do
     t.integer  "prize_id"
     t.integer  "prize2_id"
     t.integer  "entries"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "preregs", :force => true do |t|
+    t.string   "email"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prizecounts", :force => true do |t|
+    t.string   "prize_name"
+    t.integer  "prize_id"
+    t.integer  "prize_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

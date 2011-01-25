@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Email:</b>
+  <%= @prereg.email %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @prereg.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_prereg_path(@prereg) %> |
+<%= link_to 'Back', preregs_path %>

@@ -1,4 +1,8 @@
 Lottery::Application.routes.draw do
+  resources :prizecounts
+
+  resources :preregs
+
   resources :prizes
 
   resources :days

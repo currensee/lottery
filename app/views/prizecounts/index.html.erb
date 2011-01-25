@@ -1,0 +1,27 @@
+<h1>Listing prizecounts</h1>
+
+<table>
+  <tr>
+    <th>Prize name</th>
+    <th>Prize</th>
+    <th>Prize count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @prizecounts.each do |prizecount| %>
+  <tr>
+    <td><%= prizecount.prize_name %></td>
+    <td><%= prizecount.prize_id %></td>
+    <td><%= prizecount.prize_count %></td>
+    <td><%= link_to 'Show', prizecount %></td>
+    <td><%= link_to 'Edit', edit_prizecount_path(prizecount) %></td>
+    <td><%= link_to 'Destroy', prizecount, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Prizecount', new_prizecount_path %>
