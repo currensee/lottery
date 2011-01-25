@@ -12,34 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, :class => "forms", :value => "First Name" %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, :class => "forms", :value => "Last Name" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class => "forms", :value => "Email" %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :prize_id %><br />
-    <%= f.text_field :prize_id %>
-  </div>
-  <div class="field">
-    <%= f.label :prize2_id %><br />
-    <%= f.text_field :prize2_id %>
-  </div>
-  <div class="field">
-    <%= f.label :entries %><br />
-    <%= f.text_field :entries %>
+    <%= f.text_field :phone, :class => "forms", :value => "Phone" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "roll-button", :value => ""%>
   </div>
 <% end %>
