@@ -1,4 +1,10 @@
 Lottery::Application.routes.draw do
+  resources :prizes
+
+  resources :days
+
+  resources :investors
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,36 @@
+<h1>Listing investors</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Prize</th>
+    <th>Prize2</th>
+    <th>Entries</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @investors.each do |investor| %>
+  <tr>
+    <td><%= investor.first_name %></td>
+    <td><%= investor.last_name %></td>
+    <td><%= investor.email %></td>
+    <td><%= investor.phone %></td>
+    <td><%= investor.prize.name %></td>
+    <td><%= investor.prize2_id %></td>
+    <td><%= investor.entries %></td>
+    <td><%= link_to 'Show', investor %></td>
+    <td><%= link_to 'Edit', edit_investor_path(investor) %></td>
+    <td><%= link_to 'Destroy', investor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= Date.today %>
+<br />
+
+<%= link_to 'New Investor', new_investor_path %>
+<%= link_to 'Set the day', days_path %>

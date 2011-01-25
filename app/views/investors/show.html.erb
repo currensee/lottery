@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @investor.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @investor.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @investor.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @investor.phone %>
+</p>
+
+<p>
+  <b>Prize (<%= @investor.prize_id %>):</b>
+	<% if @investor.prize_id == 2 %>
+	YOU WON AN APPLE PRODUCT
+	<% elsif @investor.prize_id == 1 %>
+	You won a shirt and a hat
+	<% elsif @investor.prize_id == 3 %>
+	You won a shirt or a hat
+	<% elsif @investor.prize_id == 4 %>
+	You didnt win shit.
+	<% end %>
+  
+</p>
+
+<p>
+  <b>Prize2:</b>
+  <%= @investor.prize2_id %>
+</p>
+
+<p>
+  <b>Entries:</b>
+  <%= @investor.entries %>
+</p>
+
+Today is day number: <%= @day.number %><br/>
+
+
+<%= link_to 'Edit', edit_investor_path(@investor) %> |
+<%= link_to 'Back', investors_path %>
