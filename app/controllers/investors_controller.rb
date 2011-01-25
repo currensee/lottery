@@ -3,6 +3,7 @@ class InvestorsController < ApplicationController
   # GET /investors.xml
   def index
     @investors = Investor.all
+    @day = Day.find_by_id(1)
 
     respond_to do |format|
       format.html # index.html.erb

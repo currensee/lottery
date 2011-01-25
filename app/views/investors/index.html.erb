@@ -29,8 +29,9 @@
   </tr>
 <% end %>
 </table>
-<%= Date.today %>
 <br />
 
+
 <%= link_to 'New Investor', new_investor_path %>
-<%= link_to 'Set the day', days_path %>
+<a href="/days/1/edit">Set the day</a>
+<br/>Today is currently day number <%= @day.number %>
