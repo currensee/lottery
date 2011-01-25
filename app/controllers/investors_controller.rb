@@ -45,7 +45,8 @@ class InvestorsController < ApplicationController
     @investor = Investor.new(params[:investor])
     @yournum = rand(100)
     @day = Day.find_by_id(1)
-    
+    @prereg = Prereg.find_by_email(@investor.email)
+    @investor.last_name = @prereg.name
 
     if @day.number == 1
   
