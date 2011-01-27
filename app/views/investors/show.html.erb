@@ -39,7 +39,7 @@
 		  <div class="field">
 		    <%= @investor.entries %>
 		  </div>
-		<% if @prereg != nil && @investor.entries < 2 %>
+		<% if @prereg != nil && @investor.entries <= 1 %>
 		  <div class="actions">
 		    <a href="<%= roll_again_investor_path(@investor)%>">Enter Again</a>
 		  </div>
