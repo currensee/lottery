@@ -15,6 +15,7 @@ class InvestorsController < ApplicationController
   # GET /investors/1.xml
   def show
     @investor = Investor.find(params[:id])
+    @prereg = Prereg.find_by_email(@investor.email)
     @day = Day.find_by_id(1)
 
     respond_to do |format|
@@ -43,53 +44,15 @@ class InvestorsController < ApplicationController
   # POST /investors.xml
   def create
     @investor = Investor.new(params[:investor])
-    @yournum = rand(100)
-    @day = Day.find_by_id(1)
     @prereg = Prereg.find_by_email(@investor.email)
-    @investor.last_name = @prereg.name
-
-    if @day.number == 1
-  
-  
-      if @yournum <= 25
-      @investor.prize_id = 2
-      elsif @yournum > 25 && @yournum <=50
-      @investor.prize_id = 1
-      elsif @yournum > 51 && @yournum <=75
-      @investor.prize_id = 3
-      elsif @yournum > 76 && @yournum <=100
-      @investor.prize_id = 4
-      end
-  
-    elsif @day.number == 2
-      
-      if @yournum <= 25
-      @investor.prize_id = 2
-      elsif @yournum > 25 && @yournum <=50
-      @investor.prize_id = 1
-      elsif @yournum > 51 && @yournum <=75
-      @investor.prize_id = 3
-      elsif @yournum > 76 && @yournum <=100
-      @investor.prize_id = 4
-      end
-      
-    elsif @day.number == 3      
-      
-      if @yournum <= 50
-      @investor.prize_id = 2
-      elsif @yournum > 51 && @yournum <=90
-      @investor.prize_id = 1
-      elsif @yournum > 91 && @yournum <= 95
-      @investor.prize_id = 3
-      elsif @yournum > 96 && @yournum <=100
-      @investor.prize_id = 4
-      end
-      
+    @investor.set_prize(@investor, @prereg)
+    
+    if @investor.save
+      redirect_to @investor
+    else
+      flash[:error] = "..."
+      render :action => 'new'
     end
-    
-    @investor.save
-    redirect_to @investor
-    
   end
 
   # PUT /investors/1

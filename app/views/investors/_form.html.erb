@@ -12,16 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_field :first_name, :class => "forms", :value => "First Name" %>
+    <%= f.text_field :first_name, :class => "forms", :value => "First Name", :onFocus => "if(this.value==this.defaultValue) this.value='';", 
+	:onBlur => "if(this.value=='') this.value=this.defaultValue;" %>
   </div>
   <div class="field">
-    <%= f.text_field :last_name, :class => "forms", :value => "Last Name" %>
+    <%= f.text_field :last_name, :class => "forms", :value => "Last Name", :onFocus => "if(this.value==this.defaultValue) this.value='';", 
+	:onBlur => "if(this.value=='') this.value=this.defaultValue;" %>
   </div>
   <div class="field">
-    <%= f.text_field :email, :class => "forms", :value => "Email" %>
+    <%= f.text_field :email, :class => "forms", :value => "Email", :onFocus => "if(this.value==this.defaultValue) this.value='';", 
+	:onBlur => "if(this.value=='') this.value=this.defaultValue;" %>
   </div>
   <div class="field">
-    <%= f.text_field :phone, :class => "forms", :value => "Phone" %>
+    <%= f.text_field :phone, :class => "forms", :value => "Phone", :onFocus => "if(this.value==this.defaultValue) this.value='';", 
+	:onBlur => "if(this.value=='') this.value=this.defaultValue;" %>
+	
+	<%= f.hidden_field :entries, :value => 1 %>
   </div>
   <div class="actions">
     <%= f.submit :class => "roll-button", :value => ""%>

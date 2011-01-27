@@ -1,4 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="header"><div class="logo"></div></div>
+<div class="middle">
+	<div class="flag">
+		
+		
+
+		  <div class="field">
+		    <%= @investor.first_name %>, <%= @investor.last_name %>
+		  </div>
+		  <div class="field">
+		    <%= @investor.email %>, <%= @investor.phone %>
+		  </div>
+		  <div class="field">
+		     <b>Prize (<%= @investor.prize_id %>):</b>
+				<% if @investor.prize_id == 2 %>
+				YOU WON AN APPLE PRODUCT
+				<% elsif @investor.prize_id == 1 %>
+				You won a shirt and a hat
+				<% elsif @investor.prize_id == 3 %>
+				You won a shirt or a hat
+				<% elsif @investor.prize_id == 4 %>
+				You didnt win shit.
+				<% end %>
+		  </div>
+		  <div class="field">
+		    <%= @investor.entries %>, <%= @investor.prize2_id %>
+		  </div>
+		<% if @prereg != nil && @investor.entries <= 2 %>
+		  <div class="actions">
+		    <%= button_to "Enter", :class => "roll-button"%>
+		  </div>
+		<% end %>
+		
+	</div>
+</div>
+
+
+
+<!--><p id="notice"><%= notice %></p>
 
 <p>
   <b>First name:</b>
@@ -49,3 +87,4 @@ Today is day number: <%= @day.number %><br/>
 
 <%= link_to 'Edit', edit_investor_path(@investor) %> |
 <%= link_to 'Back', investors_path %>
+-->
