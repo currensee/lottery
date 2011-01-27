@@ -40,6 +40,19 @@ class InvestorsController < ApplicationController
     @investor = Investor.find(params[:id])
   end
 
+  def roll_again
+    
+    @investor = Investor.find(params[:id])
+    @investor.set_second_prize(@investor)
+    if @investor.save
+      redirect_to @investor
+    else
+      flash[:error] = "..."
+      render :action => 'new'
+    end
+    
+  end
+
   # POST /investors
   # POST /investors.xml
   def create

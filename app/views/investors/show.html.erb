@@ -11,7 +11,7 @@
 		    <%= @investor.email %>, <%= @investor.phone %>
 		  </div>
 		  <div class="field">
-		     <b>Prize (<%= @investor.prize_id %>):</b>
+		     <b>Prize (1):</b>
 				<% if @investor.prize_id == 2 %>
 				YOU WON AN APPLE PRODUCT
 				<% elsif @investor.prize_id == 1 %>
@@ -22,12 +22,26 @@
 				You didnt win shit.
 				<% end %>
 		  </div>
+			<% if @prereg != nil %>
 		  <div class="field">
-		    <%= @investor.entries %>, <%= @investor.prize2_id %>
+		     <b>Prize (2):</b>
+				<% if @investor.prize2_id == 2 %>
+				YOU WON AN APPLE PRODUCT
+				<% elsif @investor.prize2_id == 1 %>
+				You won a shirt and a hat
+				<% elsif @investor.prize2_id == 3 %>
+				You won a shirt or a hat
+				<% elsif @investor.prize2_id == 4 %>
+				You didnt win shit.
+				<% end %>
 		  </div>
-		<% if @prereg != nil && @investor.entries <= 2 %>
+			<% end %>
+		  <div class="field">
+		    <%= @investor.entries %>
+		  </div>
+		<% if @prereg != nil && @investor.entries < 2 %>
 		  <div class="actions">
-		    <%= button_to "Enter", :class => "roll-button"%>
+		    <a href="<%= roll_again_investor_path(@investor)%>">Enter Again</a>
 		  </div>
 		<% end %>
 		

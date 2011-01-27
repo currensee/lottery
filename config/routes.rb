@@ -7,7 +7,11 @@ Lottery::Application.routes.draw do
 
   resources :days
 
-  resources :investors
+  resources :investors do
+    member do
+      get 'roll_again'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
