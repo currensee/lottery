@@ -2,8 +2,6 @@
 <div class="middle">
 	<div class="flag" style="color:#fff;font-size:18px;line-height:27px;">
 		
-		
-
 		  <div class="field">
 		    Hey <%= @investor.first_name %> <%= @investor.last_name %>! Thanks for entering our contest! 
 		  </div>
@@ -16,7 +14,7 @@
 				<% elsif @investor.prize_id == 3 %>
 				You won a shirt or a hat
 				<% elsif @investor.prize_id == 4 %>
-				You didnt win shit.
+				You didnt win anything at all :'(
 				<% end %>
 		  </div>
 			<% if @prereg != nil %>
@@ -29,7 +27,7 @@
 				<% elsif @investor.prize2_id == 3 %>
 				You won a shirt or a hat
 				<% elsif @investor.prize2_id == 4 %>
-				You didnt win shit.
+				You didnt win anything at all :'(
 				<% end %>
 		  </div>
 			<% end %>
