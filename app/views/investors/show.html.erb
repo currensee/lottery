@@ -1,14 +1,11 @@
 <div class="header"><div class="logo"></div></div>
 <div class="middle">
-	<div class="flag">
+	<div class="flag" style="color:#fff;font-size:18px;line-height:27px;">
 		
 		
 
 		  <div class="field">
-		    <%= @investor.first_name %>, <%= @investor.last_name %>
-		  </div>
-		  <div class="field">
-		    <%= @investor.email %>, <%= @investor.phone %>
+		    Hey <%= @investor.first_name %> <%= @investor.last_name %>! Thanks for entering our contest! 
 		  </div>
 		  <div class="field">
 		     <b>Prize (1):</b>
@@ -37,11 +34,12 @@
 		  </div>
 			<% end %>
 		  <div class="field">
-		    <%= @investor.entries %>
+		   You've entered <%= @investor.entries %> times
 		  </div>
 		<% if @prereg != nil && @investor.entries <= 1 %>
+		but because you pre-registered, <strong>you get enter again!</strong>
 		  <div class="actions">
-		    <a href="<%= roll_again_investor_path(@investor)%>">Enter Again</a>
+		    <a href="<%= roll_again_investor_path(@investor)%>"><div class="roll-button"></div></a>
 		  </div>
 		<% end %>
 		

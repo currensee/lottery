@@ -7,9 +7,9 @@ class Investor < ActiveRecord::Base
     @yournum = rand(100)
     @day = Day.find_by_id(1)
     
-    if email != nil
-      investor.last_name = email.name
-    end 
+    #if email != nil
+     # investor.last_name = email.name
+    #end 
     
     if @day.number == 1
   
