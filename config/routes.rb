@@ -1,4 +1,6 @@
 Lottery::Application.routes.draw do
+  root :to => 'investors#new'
+  
   resources :prizecounts
 
   resources :preregs
@@ -11,6 +13,8 @@ Lottery::Application.routes.draw do
     member do
       get 'roll_again'
     end
+    
+    
   end
 
   # The priority is based upon order of creation:
