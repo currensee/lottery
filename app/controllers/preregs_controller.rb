@@ -41,7 +41,8 @@ class PreregsController < ApplicationController
   # POST /preregs.xml
   def create
     @prereg = Prereg.new(params[:prereg])
-
+    @prereg.email = @prereg.email.downcase
+    
     respond_to do |format|
       if @prereg.save
         format.html { redirect_to(@prereg, :notice => 'Prereg was successfully created.') }

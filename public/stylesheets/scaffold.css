@@ -57,7 +57,7 @@ div.field, div.actions {
 }
 
 #error_explanation {
-  width: 450px;
+  width: 94%;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;

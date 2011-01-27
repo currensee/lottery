@@ -2,6 +2,8 @@ class Investor < ActiveRecord::Base
   belongs_to :prize
   belongs_to :prize2, :class_name => 'Prize'
   
+  validates_uniqueness_of :email
+  
   def set_prize(investor, email)
     
     @yournum = rand(100)

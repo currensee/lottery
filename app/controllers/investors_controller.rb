@@ -44,6 +44,7 @@ class InvestorsController < ApplicationController
     
     @investor = Investor.find(params[:id])
     @investor.set_second_prize(@investor)
+    
     if @investor.save
       redirect_to @investor
     else
@@ -57,7 +58,9 @@ class InvestorsController < ApplicationController
   # POST /investors.xml
   def create
     @investor = Investor.new(params[:investor])
+    @investor.email = @investor.email.downcase
     @prereg = Prereg.find_by_email(@investor.email)
+    
     @investor.set_prize(@investor, @prereg)
     
     if @investor.save
