@@ -4,43 +4,43 @@
 		<img src="/images/right-side-text.png" style="float:right;margin:-60px -290px 0 0;">
 		
 		  <div class="field">
-		    Hey <%= @investor.first_name %> <%= @investor.last_name %>! Thanks for entering our contest! 
+		    Thanks for entering our contest. Congratulations <%= @investor.first_name %>! 
 		  </div>
 		  <div class="field">
 		     <b>Prize (1):</b>
 				<% if @investor.prize_id == 2 %>
 					<% if @apple.prize_count == 1 %>
-					YOU WON AN APPLE TV
+					You’ve just won an Apple TV. Yippee!
 					<% elsif  @apple.prize_count == 2 %>
-					YOU WON AN APPLE IPOD TOUCH
+					You’ve just won an Apple iPod. Way to go!
 					<% elsif  @apple.prize_count == 3 %>
-					YOU WON AN IPAD
+					You’ve just won an Apple iPad. Wahoo!
 					<% end %>
 				<% elsif @investor.prize_id == 1 %>
-				You won a shirt and a hat
+				You’ve just won a Currensee hat and t-shirt. Let us be the first to say, you are looking good!
 				<% elsif @investor.prize_id == 3 %>
-				You won a shirt or a hat
+				You’ve just won some cool Currensee gear. It’s a tough decision t-shirt or hat, what will you choose?
 				<% elsif @investor.prize_id == 4 %>
-				You didnt win anything at all :'(
+				We’re very sorry but you didn’t win anything. Don’t cry though, think of how fun this was! 
 				<% end %>
 		  </div>
 			<% if @prereg != nil %>
 		  <div class="field">
 		     <b>Prize (2):</b>
-				<% if @investor.prize2_id == 2 %>
+				<% if @investor.prize_id == 2 %>
 					<% if @apple.prize_count == 1 %>
-					YOU WON AN APPLE TV
+					You’ve just won an Apple TV. Yippee!
 					<% elsif  @apple.prize_count == 2 %>
-					YOU WON AN APPLE IPOD TOUCH
+					You’ve just won an Apple iPod. Way to go!
 					<% elsif  @apple.prize_count == 3 %>
-					YOU WON AN IPAD
+					You’ve just won an Apple iPad. Wahoo!
 					<% end %>
-				<% elsif @investor.prize2_id == 1 %>
-				You won a shirt and a hat
-				<% elsif @investor.prize2_id == 3 %>
-				You won a shirt or a hat
-				<% elsif @investor.prize2_id == 4 %>
-				You didnt win anything at all :'(
+				<% elsif @investor.prize_id == 1 %>
+				You’ve just won a Currensee hat and t-shirt. Let us be the first to say, you are looking good!
+				<% elsif @investor.prize_id == 3 %>
+				You’ve just won some cool Currensee gear. It’s a tough decision t-shirt or hat, what will you choose?
+				<% elsif @investor.prize_id == 4 %>
+				We’re very sorry but you didn’t win anything. Don’t cry though, think of how fun this was! 
 				<% end %>
 		  </div>
 			<% end %>
@@ -48,7 +48,7 @@
 		   You've entered <%= @investor.entries %> times
 		  </div>
 		<% if @prereg != nil && @investor.entries <= 1 %>
-		but because you pre-registered, <strong>you get enter again!</strong>
+		Lucky you, since you pre-registered you get another chance to win a prize!</strong>
 		  <div class="actions">
 		    <a href="<%= roll_again_investor_path(@investor)%>"><div class="roll-button"></div></a>
 		  </div>
