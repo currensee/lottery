@@ -9,7 +9,13 @@
 		  <div class="field">
 		     <b>Prize (1):</b>
 				<% if @investor.prize_id == 2 %>
-				YOU WON AN APPLE PRODUCT
+					<% if @apple.prize_count == 1 %>
+					YOU WON AN APPLE TV
+					<% elsif  @apple.prize_count == 2 %>
+					YOU WON AN APPLE IPOD TOUCH
+					<% elsif  @apple.prize_count == 3 %>
+					YOU WON AN IPAD
+					<% end %>
 				<% elsif @investor.prize_id == 1 %>
 				You won a shirt and a hat
 				<% elsif @investor.prize_id == 3 %>
@@ -22,7 +28,13 @@
 		  <div class="field">
 		     <b>Prize (2):</b>
 				<% if @investor.prize2_id == 2 %>
-				YOU WON AN APPLE PRODUCT
+					<% if @apple.prize_count == 1 %>
+					YOU WON AN APPLE TV
+					<% elsif  @apple.prize_count == 2 %>
+					YOU WON AN APPLE IPOD TOUCH
+					<% elsif  @apple.prize_count == 3 %>
+					YOU WON AN IPAD
+					<% end %>
 				<% elsif @investor.prize2_id == 1 %>
 				You won a shirt and a hat
 				<% elsif @investor.prize2_id == 3 %>

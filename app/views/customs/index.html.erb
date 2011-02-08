@@ -1,0 +1,29 @@
+<h1>Listing customs</h1>
+
+<table>
+  <tr>
+    <th>Apple</th>
+    <th>Bundle</th>
+    <th>Pickone</th>
+    <th>Nothing</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customs.each do |custom| %>
+  <tr>
+    <td><%= custom.apple %></td>
+    <td><%= custom.bundle %></td>
+    <td><%= custom.pickone %></td>
+    <td><%= custom.nothing %></td>
+    <td><%= link_to 'Show', custom %></td>
+    <td><%= link_to 'Edit', edit_custom_path(custom) %></td>
+    <td><%= link_to 'Destroy', custom, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Custom', new_custom_path %>

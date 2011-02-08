@@ -1,0 +1,33 @@
+<%= form_for(@custom) do |f| %>
+  <% if @custom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custom.errors.count, "error") %> prohibited this custom from being saved:</h2>
+
+      <ul>
+      <% @custom.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :apple %><br />
+    <%= f.text_field :apple %>
+  </div>
+  <div class="field">
+    <%= f.label :bundle %><br />
+    <%= f.text_field :bundle %>
+  </div>
+  <div class="field">
+    <%= f.label :pickone %><br />
+    <%= f.text_field :pickone %>
+  </div>
+  <div class="field">
+    <%= f.label :nothing %><br />
+    <%= f.text_field :nothing %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

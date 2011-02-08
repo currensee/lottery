@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  apple: 1
+  bundle: 1
+  pickone: 1
+  nothing: 1
+
+two:
+  apple: 1
+  bundle: 1
+  pickone: 1
+  nothing: 1

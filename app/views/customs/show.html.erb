@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Apple:</b>
+  <%= @custom.apple %>
+</p>
+
+<p>
+  <b>Bundle:</b>
+  <%= @custom.bundle %>
+</p>
+
+<p>
+  <b>Pickone:</b>
+  <%= @custom.pickone %>
+</p>
+
+<p>
+  <b>Nothing:</b>
+  <%= @custom.nothing %>
+</p>
+
+
+<%= link_to 'Edit', edit_custom_path(@custom) %> |
+<%= link_to 'Back', customs_path %>

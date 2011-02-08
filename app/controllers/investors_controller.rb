@@ -17,6 +17,7 @@ class InvestorsController < ApplicationController
     @investor = Investor.find(params[:id])
     @prereg = Prereg.find_by_email(@investor.email)
     @day = Day.find_by_id(1)
+    @apple = Prizecount.find_by_id(1)
 
     respond_to do |format|
       format.html # show.html.erb

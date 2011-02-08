@@ -1,4 +1,6 @@
 Lottery::Application.routes.draw do
+  resources :customs
+
   root :to => 'investors#new'
   
   resources :prizecounts

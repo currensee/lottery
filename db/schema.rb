@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110125193418) do
+ActiveRecord::Schema.define(:version => 20110208145928) do
+
+  create_table "customs", :force => true do |t|
+    t.integer  "apple"
+    t.integer  "bundle"
+    t.integer  "pickone"
+    t.integer  "nothing"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "days", :force => true do |t|
     t.integer  "number"
