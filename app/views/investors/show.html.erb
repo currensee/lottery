@@ -37,7 +37,9 @@
 				 Congratulations <%= @investor.first_name %>! You’ve just won a Currensee hat and t-shirt. Let us be the first to say, you are looking good!
 				<% elsif @investor.prize2_id == 3 %>
 				 Congratulations <%= @investor.first_name %>! You’ve just won some cool Currensee gear. It’s a tough decision t-shirt or hat, what will you choose?
-				<% elsif @investor.prize2_id == 4 %>
+				<% elsif @investor.prize2_id == 4 && @investor.prize_id == 4 %>
+				Our sincerest apologies but you still didn’t win, better luck at the next show! 
+				<% elsif @investor.prize2_id == 4 && @investor.prize_id != 4 %>
 				We’re very sorry but you didn’t win anything. Don’t cry though, think of how fun this was! 
 				<% end %>
 		  </div>
