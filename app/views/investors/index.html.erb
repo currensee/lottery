@@ -9,6 +9,7 @@
     <th>Prize</th>
     <th>Prize2</th>
     <th>Entries</th>
+    <th>Created At</th>
     <th></th>
     <th></th>
     <th></th>
@@ -25,6 +26,7 @@
 	<%= investor.prize2.name %>
 	<% end %></td>
     <td><%= investor.entries %></td>
+    <td><%= investor.created_at.strftime('%m/%d/%y %I:%M') %></td>
     <td><%= link_to 'Show', investor %></td>
     <td><%= link_to 'Edit', edit_investor_path(investor) %></td>
     <td><%= link_to 'Destroy', investor, :confirm => 'Are you sure?', :method => :delete %></td>
